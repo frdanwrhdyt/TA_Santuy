@@ -20,6 +20,7 @@ cur = db.cursor() #Kursor buat databasenya
 
 instrument = minimalmodbus.Instrument('/dev/ttyUSB0',1) #Deklarasi PORT
 instrument.serial.baudrate = 9600 #Deklarasi bandwith
+sleep(1) #Mempersiapkan system (biar tidak terjadi bug)
 
 #-----------------Mengambil data dari modbus----------------#
 def read_meter():
@@ -74,7 +75,6 @@ def send_MySQL(TIME,CURR,VOLT,POWF,ACTP,RELP,APPP):
 #----------Mengirim data ke MySQL (local database)---------#
 
 #---------------------Fungsi perulangan--------------------#
-while True:      
-    sleep(1)     
+while True:          
     read_meter() #Memanggil fungsi
 #---------------------Fungsi perulangan--------------------#
