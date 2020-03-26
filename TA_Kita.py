@@ -1,11 +1,11 @@
 #=komen dlm bahasa python
 #---------------------Deklarasi library---------------------#
-import minimalmodbus
-from time import sleep
-import datetime
-import json
-import requests
-import mysql.connector
+import minimalmodbus #Buat baca data modbus dari Meteran listrik
+from time import sleep #Buat kasih fungsi jeda/sleep
+import datetime #Buat kasih waktu diakses
+import json #Buat fungsi import ke JSON dan kirim data ke antares berupa JSON
+import requests #Meminta buat akses antares
+import mysql.connector #supaya bisa akses MySQL
 #---------------------Deklarasi library---------------------#
 
 #---------------------Deklarasi Database--------------------#
