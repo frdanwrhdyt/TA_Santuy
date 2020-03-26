@@ -18,8 +18,8 @@ db   = mysql.connector.connect( #Deklarasi MySQL
 cur = db.cursor() #Kursor buat databasenya
 #---------------------Deklarasi Database--------------------#
 
-instrument = minimalmodbus.Instrument('/dev/ttyUSB0',1) #Deklarasi PORT
-instrument.serial.baudrate = 9600 #Deklarasi bandwith
+instrument = minimalmodbus.Instrument('/dev/ttyUSB0',1) #Deklarasi PORT buat modbusnya
+instrument.serial.baudrate = 9600 #Deklarasi bandwith buat modbusnya
 sleep(1) #Mempersiapkan system (biar tidak terjadi bug)
 
 #-----------------Mengambil data dari modbus----------------#
@@ -41,7 +41,7 @@ def read_meter():
 	i = len(VAR) #Menghitung jumlah anggota array di atas
   
 #--------------------Menulis ke terminal-------------------#
-  for j in range (0,i):
+  	for j in range (0,i):
 		print(str(VAR[j]) + ' = ' + str(DATA[j]))
 #--------------------Menulis ke terminal-------------------#
 
