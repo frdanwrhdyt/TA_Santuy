@@ -17,11 +17,12 @@ db   = mysql.connector.connect( #Deklarasi MySQL
 )
 cur = db.cursor() #Kursor buat databasenya
 #---------------------Deklarasi Database--------------------#
+
 instrument = minimalmodbus.Instrument('/dev/ttyUSB0',1) #Deklarasi PORT
 instrument.serial.baudrate = 9600 #Deklarasi bandwith
 
-def read_meter():
 #-----------------Mengambil data dari modbus----------------#
+def read_meter():
 	CURR = float(instrument.read_float(0x0BB7)) #total arus
 	VOLT = float(instrument.read_float(0x0BD3)) #tolal tegangan 
 	POWF = float(instrument.read_float(0x0C77)) #daya factor
